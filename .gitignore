@@ -1,0 +1,12 @@
+# Build output
+bin/
+out/
+*.class
+
+# OS / editor
+.DS_Store
+.idea/
+*.iml
+
+# Archives downloaded from Moodle
+*.zip
