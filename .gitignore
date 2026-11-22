@@ -1,16 +1,13 @@
-# Build output
-bin/
-build/
+# Build output (keep the empty bin/ folder itself)
+bin/*
+!bin/.gitkeep
 *.o
-*.out
-*.class
-env_check/hello
-env_check/test.db
 
 # OS / editor
 .DS_Store
-.idea/
+.vscode/
 
-# Course material (keep out of the repo)
+# Course material (not part of the submission)
 *.pdf
+*.html
 *.zip

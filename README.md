@@ -1,16 +1,17 @@
-# SPL – Assignment 1 (Systems Programming, BGU 2026-27)
+# SPL Data Center – Assignment 1 (Systems Programming, BGU Fall 2026)
 
-Environment: the official course dev container (`ghcr.io/bguspl/student-env:1.4`) –
-GCC 13 / C++, Java 25, Python 3.12, valgrind, gdb, cmake.
+Skeleton from https://github.com/bguspl/spl27-ass1-students
+Due: 26/11/2026 23:59, submitted in pairs on Moodle as `ID1_ID2.zip`.
 
-## Open the environment
-1. Docker Desktop running.
-2. VS Code → open this folder → bottom-left `><` → **Reopen in Container**
-   (or "Rebuild Container" if you had opened it before with the old setup).
-3. Check it works: in the VS Code terminal run `./env_check/run.sh`
-   → should print Hello from C++, Java and Python.
+## Environment
+Docker Desktop running → VS Code → bottom-left `><` → **Reopen in Container**.
+Do not modify `.devcontainer/`, `src/Main.cpp`, `include/json.hpp`, or the supplied
+functions `readConfig`, `generateTokenEmbedding`, `mixByte`, `mixString`.
 
-## Files
-- `config_example.json` – example input config given with the assignment
-- `env_check/` – the course's smoke test
-- Assignment PDF: kept locally, not committed (see .gitignore)
+## Build & run (inside the container)
+```
+make clean && make
+./bin/server config_example.json
+valgrind --leak-check=full --show-reachable=yes ./bin/server config_example.json
+```
+Compile flags must be exactly: `g++ -Wall -Weffc++ -std=c++11 -c -Iinclude` (+ optional `-g`).
