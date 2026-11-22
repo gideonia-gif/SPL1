@@ -1,29 +1,16 @@
-# SPL1 – Assignment 5: Bank Management System (Java)
+# SPL – Assignment 1 (Systems Programming, BGU 2026-27)
 
-## Layout
-```
-src/          all .java files (skeletons from VPL + given files from the Moodle zip)
-bin/          compiled classes (ignored by git)
-run.sh        compile everything, optionally run a class
-.devcontainer Docker environment for VS Code (Java 17)
-```
+Environment: the official course dev container (`ghcr.io/bguspl/student-env:1.4`) –
+GCC 13 / C++, Java 25, Python 3.12, valgrind, gdb, cmake.
 
-## First-time setup
-1. Install the VS Code extension **Dev Containers** (ms-vscode-remote.remote-containers).
-2. Make sure Docker Desktop is running.
-3. In VS Code: `File > Open Folder…` → this folder → click **Reopen in Container**
-   (or Cmd+Shift+P → "Dev Containers: Reopen in Container"). First build takes a few minutes.
-4. Put the files in `src/`:
-   - Skeleton files from VPL: BankAccount, AccountComparatorByName, AccountComparatorByNumber,
-     BinaryNode, TestToString, BankAccountsBinarySearchTree, TestBalance, FilterByBalance,
-     FilterByAccountNumber, FilterIterator, BankAccountFiltering, Bank
-   - Everything from the Moodle zip (Stack, List, DynamicArray, LinkedList, Link, BinaryTree,
-     BinarySearchTree, BinarySearchNode, BinaryTreeInOrderIterator, Filter, ...) – do NOT modify these.
-5. Check it compiles: `./run.sh`  then e.g. `./run.sh TestToString`
+## Open the environment
+1. Docker Desktop running.
+2. VS Code → open this folder → bottom-left `><` → **Reopen in Container**
+   (or "Rebuild Container" if you had opened it before with the old setup).
+3. Check it works: in the VS Code terminal run `./env_check/run.sh`
+   → should print Hello from C++, Java and Python.
 
-## Git
-```
-git add .
-git commit -m "message"
-git push
-```
+## Files
+- `config_example.json` – example input config given with the assignment
+- `env_check/` – the course's smoke test
+- Assignment PDF: kept locally, not committed (see .gitignore)

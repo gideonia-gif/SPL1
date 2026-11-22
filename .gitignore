@@ -1,12 +1,16 @@
 # Build output
 bin/
-out/
+build/
+*.o
+*.out
 *.class
+env_check/hello
+env_check/test.db
 
 # OS / editor
 .DS_Store
 .idea/
-*.iml
 
-# Archives downloaded from Moodle
+# Course material (keep out of the repo)
+*.pdf
 *.zip
