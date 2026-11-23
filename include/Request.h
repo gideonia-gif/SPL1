@@ -17,6 +17,7 @@ protected:
     std::size_t reservedBlocks;
 public:
     Request(int id, const Model& model, int admissionCycle, std::string prompt);
+    virtual ~Request() = default;   // requests are deleted through Request*
     virtual std::size_t getNeededMemory(const GPU& gpu) const=0;
     virtual std::size_t getMaxNeededMemory() const=0;
     virtual std::vector<std::string> getCacheableTokens() const=0;
